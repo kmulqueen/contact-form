@@ -1,0 +1,99 @@
+@font-face {
+  font-family: "Karia";
+  font-style: normal;
+  src: url("./assets/fonts/Karla-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Karia Italic";
+  font-style: italic;
+  src: url("./assets/fonts/Karla-Italic-VariableFont_wght.ttf")
+    format("truetype");
+}
+
+:root {
+  --color-white: hsl(0, 0%, 100%);
+  --color-grey-500: hsl(186, 15%, 59%);
+  --color-grey-900: hsl(187, 24%, 22%);
+  --color-green-200: hsl(148, 38%, 91%);
+  --color-green-600: hsl(169, 82%, 27%);
+  --color-red: hsl(0, 66%, 54%);
+
+  --fs-large: 2rem;
+  --fs-md: 1.125rem;
+  --fs-sm: 1rem;
+
+  --ls-heading: -1px;
+  --ls-body-md: 0px;
+  --ls-body-sm: 0px;
+
+  --spacing-100: 0.5rem;
+  --spacing-150: 0.75rem;
+  --spacing-200: 1rem;
+  --spacing-300: 1.5rem;
+  --spacing-400: 2rem;
+  --spacing-500: 2.5rem;
+  --spacing-1600: 8rem;
+
+  --text-heading: 700 var(--fs-large) / 1 "Karia";
+  --text-body-md-bold: 700 var(--fs-md) / 1.5 "Karia";
+  --text-body-md-regular: 400 var(--fs-md) / 1.5 "Karia";
+  --text-body-sm: 400 var(--fs-sm) / 1.5 "Karia";
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Karia";
+}
+
+label {
+  font: var(--text-body-sm);
+  color: var(--color-grey-900);
+}
+
+.text-heading {
+  font: var(--text-heading);
+  letter-spacing: var(--ls-heading);
+}
+
+.text-body-md-bold {
+  font: var(--text-body-md-bold);
+  letter-spacing: var(--ls-body-md);
+}
+
+.text-body-md-regular {
+  font: var(--text-body-md-regular);
+  letter-spacing: var(--ls-body-md);
+}
+
+.text-body-sm {
+  font: var(--text-body-sm);
+  letter-spacing: var(--ls-body-sm);
+}
+
+.sr-only {
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.icon {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.input-error {
+  font: var(--text-body-sm);
+  color: var(--color-red);
+}

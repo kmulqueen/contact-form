@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Contact form</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1 class="text-heading">Contact Us</h1>
+      <form novalidate>
+        <fieldset>
+          <legend>Enter your contact information:</legend>
+          <div>
+            <label for="first-name"
+              >First Name<svg class="icon" focusable="false">
+                <use href="./assets/images/sprite.svg#asterisk"></use>
+              </svg>
+              <span class="sr-only"> required </span>
+            </label>
+            <input
+              type="text"
+              name="first-name"
+              id="first-name"
+              required
+              autocomplete="given-name"
+            />
+            <p class="input-error" id="first-name-error"></p>
+              This field is required
+            </p>
+          </div>
+          <div>
+            <label for="last-name"
+              >Last Name<svg class="icon" focusable="false">
+                <use href="./assets/images/sprite.svg#asterisk"></use>
+              </svg>
+              <span class="sr-only"> required </span>
+            </label>
+            <input
+              type="text"
+              name="last-name"
+              id="last-name"
+              required
+              autocomplete="family-name"
+            />
+            <p class="input-error" id="last-name-error">
+              This field is required
+            </p>
+          </div>
+          <div>
+            <label for="email-address"
+              >Email Address<svg class="icon" focusable="false">
+                <use href="./assets/images/sprite.svg#asterisk"></use>
+              </svg>
+              <span class="sr-only"> required </span>
+            </label>
+            <input
+              type="email"
+              name="email-address"
+              id="email-address"
+              required
+              autocomplete="email"
+            />
+            <p class="input-error" id="email-error">
+              Please enter a valid email address
+            </p>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>
+            Query type<svg class="icon" focusable="false">
+              <use href="./assets/images/sprite.svg#asterisk"></use>
+            </svg>
+            <span class="sr-only"> required </span>
+          </legend>
+          <div>
+            <input type="radio" name="query" id="general" />
+            <label for="general">General Enquiry</label>
+          </div>
+          <div>
+            <input type="radio" name="query" id="support" />
+            <label for="support">Support Request</label>
+          </div>
+          <p class="input-error" id="query-error">
+            Please select a query type
+          </p>
+        </fieldset>
+        <div>
+          <label for="message"
+            >Message<svg class="icon" focusable="false">
+              <use href="./assets/images/sprite.svg#asterisk"></use>
+            </svg>
+            <span class="sr-only"> required </span>
+          </label>
+          <textarea name="message" id="message"></textarea>
+          <p class="input-error" id="message-error">
+            This field is required
+          </p>
+        </div>
+        <div>
+          <input type="checkbox" name="consent" id="consent" />
+          <label for="consent"
+            >I consent to being contacted by the team<svg
+              class="icon"
+              focusable="false"
+            >
+              <use href="./assets/images/sprite.svg#asterisk"></use>
+            </svg>
+            <span class="sr-only"> required </span>
+          </label>
+          <p class="input-error" id="consent-error">
+            To submit this form, please consent to being contacted
+          </p>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+      <dialog>
+        Message Sent! Thanks for completing the form. We'll be in touch soon!
+      </dialog>
+    </main>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </body>
+</html>
