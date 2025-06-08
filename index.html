@@ -12,7 +12,7 @@
       href="./assets/images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="./style.css" />
-
+    <script src="./script.js" defer></script>
     <title>Contact form</title>
   </head>
   <body>
@@ -23,7 +23,7 @@
           <legend class="sr-only">Enter your contact information:</legend>
           <div class="input-container contact-info__input-container">
             <label for="first-name"
-              >First Name<svg class="icon" focusable="false">
+              >First Name<svg class="icon-asterisk" focusable="false">
                 <use href="./assets/images/sprite.svg#asterisk"></use>
               </svg>
               <span class="sr-only"> required </span>
@@ -42,7 +42,7 @@
           </div>
           <div class="input-container contact-info__input-container">
             <label for="last-name"
-              >Last Name<svg class="icon" focusable="false">
+              >Last Name<svg class="icon-asterisk" focusable="false">
                 <use href="./assets/images/sprite.svg#asterisk"></use>
               </svg>
               <span class="sr-only"> required </span>
@@ -61,7 +61,7 @@
           </div>
           <div class="input-container contact-info__input-container">
             <label for="email-address"
-              >Email Address<svg class="icon" focusable="false">
+              >Email Address<svg class="icon-asterisk" focusable="false">
                 <use href="./assets/images/sprite.svg#asterisk"></use>
               </svg>
               <span class="sr-only"> required </span>
@@ -81,7 +81,7 @@
         </fieldset>
         <fieldset name="query-type">
           <legend>
-            Query type<svg class="icon" focusable="false">
+            Query type<svg class="icon-asterisk" focusable="false">
               <use href="./assets/images/sprite.svg#asterisk"></use>
             </svg>
             <span class="sr-only"> required </span>
@@ -98,7 +98,7 @@
         </fieldset>
         <fieldset name="message-field">
           <label for="message"
-            >Message<svg class="icon" focusable="false">
+            >Message<svg class="icon-asterisk" focusable="false">
               <use href="./assets/images/sprite.svg#asterisk"></use>
             </svg>
             <span class="sr-only"> required </span>
@@ -110,7 +110,7 @@
           <input type="checkbox" name="consent" id="consent" />
           <label for="consent"
             >I consent to being contacted by the team<svg
-              class="icon"
+              class="icon-asterisk"
               focusable="false"
             >
               <use href="./assets/images/sprite.svg#asterisk"></use>
@@ -124,7 +124,11 @@
         <button type="submit">Submit</button>
       </form>
       <dialog>
-        Message Sent! Thanks for completing the form. We'll be in touch soon!
+        <svg class="icon-success" focusable="false">
+          <use href="./assets/images/sprite.svg#success"></use>
+        </svg>
+        <h2 class="text-body-md-bold">Message Sent!</h2>
+        <p>Thanks for completing the form. We'll be in touch soon!</p>
       </dialog>
     </main>
 

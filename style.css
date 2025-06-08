@@ -75,6 +75,7 @@ main {
   background-color: var(--color-white);
   padding: var(--spacing-300);
   border-radius: 1rem;
+  /* position: relative; */
 }
 
 input,
@@ -181,9 +182,14 @@ button {
   width: 1px;
 }
 
-.icon {
+.icon-asterisk {
   height: 1.25rem;
   width: 1.25rem;
+}
+
+.icon-success {
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 .input-error {
@@ -249,6 +255,19 @@ fieldset[name="consent-field"] > label {
   grid-area: error;
 }
 
+dialog > h2 {
+  color: var(--color-white);
+  grid-area: heading;
+}
+
+dialog > svg {
+  grid-area: icon;
+}
+
+dialog > p {
+  grid-area: message;
+}
+
 .attribution {
   margin-top: var(--spacing-400);
   font-size: 11px;
@@ -301,4 +320,29 @@ button:focus,
 button:active {
   outline: none;
   background-color: var(--color-green-900);
+}
+
+dialog:not([open]) {
+  display: none;
+}
+
+dialog[open] {
+  position: fixed;
+  top: 40%;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  border: none;
+  background-color: var(--color-grey-900);
+  color: var(--color-green-200);
+  font: var(--text-body-sm);
+  display: grid;
+  grid-template-columns: 1.5rem 1fr;
+  grid-template-areas:
+    "icon heading"
+    "message message";
+  width: 100%;
+  padding: var(--spacing-400);
+  gap: var(--spacing-150);
+  border-radius: 1rem;
 }
