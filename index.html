@@ -14,25 +14,14 @@
     <link rel="stylesheet" href="./style.css" />
 
     <title>Contact form</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
   </head>
   <body>
     <main>
       <h1 class="text-heading">Contact Us</h1>
       <form novalidate>
-        <fieldset>
-          <legend>Enter your contact information:</legend>
-          <div>
+        <fieldset name="contact-info">
+          <legend class="sr-only">Enter your contact information:</legend>
+          <div class="input-container contact-info__input-container">
             <label for="first-name"
               >First Name<svg class="icon" focusable="false">
                 <use href="./assets/images/sprite.svg#asterisk"></use>
@@ -45,12 +34,13 @@
               id="first-name"
               required
               autocomplete="given-name"
+              class="text-input"
             />
-            <p class="input-error" id="first-name-error"></p>
+            <p class="input-error" id="first-name-error">
               This field is required
             </p>
           </div>
-          <div>
+          <div class="input-container contact-info__input-container">
             <label for="last-name"
               >Last Name<svg class="icon" focusable="false">
                 <use href="./assets/images/sprite.svg#asterisk"></use>
@@ -63,12 +53,13 @@
               id="last-name"
               required
               autocomplete="family-name"
+              class="text-input"
             />
             <p class="input-error" id="last-name-error">
               This field is required
             </p>
           </div>
-          <div>
+          <div class="input-container contact-info__input-container">
             <label for="email-address"
               >Email Address<svg class="icon" focusable="false">
                 <use href="./assets/images/sprite.svg#asterisk"></use>
@@ -81,44 +72,41 @@
               id="email-address"
               required
               autocomplete="email"
+              class="text-input"
             />
             <p class="input-error" id="email-error">
               Please enter a valid email address
             </p>
           </div>
         </fieldset>
-        <fieldset>
+        <fieldset name="query-type">
           <legend>
             Query type<svg class="icon" focusable="false">
               <use href="./assets/images/sprite.svg#asterisk"></use>
             </svg>
             <span class="sr-only"> required </span>
           </legend>
-          <div>
-            <input type="radio" name="query" id="general" />
-            <label for="general">General Enquiry</label>
-          </div>
-          <div>
-            <input type="radio" name="query" id="support" />
-            <label for="support">Support Request</label>
-          </div>
-          <p class="input-error" id="query-error">
-            Please select a query type
-          </p>
+          <label for="general" class="radio-input"
+            ><input type="radio" name="query" id="general" />General
+            Enquiry</label
+          >
+          <label for="support" class="radio-input"
+            ><input type="radio" name="query" id="support" />Support
+            Request</label
+          >
+          <p class="input-error" id="query-error">Please select a query type</p>
         </fieldset>
-        <div>
+        <fieldset name="message-field">
           <label for="message"
             >Message<svg class="icon" focusable="false">
               <use href="./assets/images/sprite.svg#asterisk"></use>
             </svg>
             <span class="sr-only"> required </span>
           </label>
-          <textarea name="message" id="message"></textarea>
-          <p class="input-error" id="message-error">
-            This field is required
-          </p>
-        </div>
-        <div>
+          <textarea name="message" id="message" rows="8" cols="8"></textarea>
+          <p class="input-error" id="message-error">This field is required</p>
+        </fieldset>
+        <fieldset name="consent-field">
           <input type="checkbox" name="consent" id="consent" />
           <label for="consent"
             >I consent to being contacted by the team<svg
@@ -132,7 +120,7 @@
           <p class="input-error" id="consent-error">
             To submit this form, please consent to being contacted
           </p>
-        </div>
+        </fieldset>
         <button type="submit">Submit</button>
       </form>
       <dialog>
@@ -140,10 +128,11 @@
       </dialog>
     </main>
 
-    <div class="attribution">
+    <footer class="attribution">
       Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-      Coded by <a href="#">Your Name Here</a>.
-    </div>
+      <a href="https://www.frontendmentor.io/challenges/contact-form--G-hYlqKJj"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://github.com/kmulqueen">Kyle Mulqueen</a>.
+    </footer>
   </body>
 </html>

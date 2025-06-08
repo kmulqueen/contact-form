@@ -1,3 +1,9 @@
+/*
+  ==============================
+  * Root Styles & Reset
+  ==============================
+*/
+
 @font-face {
   font-family: "Karia";
   font-style: normal;
@@ -17,6 +23,7 @@
   --color-grey-900: hsl(187, 24%, 22%);
   --color-green-200: hsl(148, 38%, 91%);
   --color-green-600: hsl(169, 82%, 27%);
+  --color-green-900: hsl(169, 83%, 14%);
   --color-red: hsl(0, 66%, 54%);
 
   --fs-large: 2rem;
@@ -49,18 +56,91 @@
   box-sizing: border-box;
 }
 
+/*
+  ==============================
+  * Element Selectors
+  ==============================
+*/
+
 html {
   font-family: "Karia";
 }
 
-label {
+body {
+  background-color: var(--color-green-200);
+  padding: var(--spacing-400) var(--spacing-200);
+}
+
+main {
+  background-color: var(--color-white);
+  padding: var(--spacing-300);
+  border-radius: 1rem;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+input[type="checkbox"] {
+  height: 1rem;
+  width: 1rem;
+}
+
+fieldset {
+  border: transparent;
+  margin-bottom: var(--spacing-300);
+}
+
+label,
+legend {
   font: var(--text-body-sm);
   color: var(--color-grey-900);
 }
 
+input,
+textarea {
+  border: 1px solid var(--color-grey-500);
+}
+
+textarea {
+  resize: none;
+  border-radius: 0.5rem;
+  padding: var(--spacing-150) var(--spacing-300);
+}
+
+input[type="radio"] {
+  appearance: none;
+  border-radius: 50%;
+  height: 1rem;
+  width: 1rem;
+  position: relative;
+  top: 0.25rem;
+}
+
+button {
+  background-color: var(--color-green-600);
+  color: var(--color-white);
+  font: var(--text-body-md-bold);
+  display: grid;
+  width: 100%;
+  padding: var(--spacing-150) 0;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+/*
+  ==============================
+  * Utility Classes
+  ==============================
+*/
+
 .text-heading {
   font: var(--text-heading);
   letter-spacing: var(--ls-heading);
+  color: var(--color-grey-900);
 }
 
 .text-body-md-bold {
@@ -78,6 +158,19 @@ label {
   letter-spacing: var(--ls-body-sm);
 }
 
+.text-input,
+.radio-input {
+  padding: var(--spacing-150) var(--spacing-300);
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.radio-input {
+  display: flex;
+  gap: var(--spacing-200);
+  border: 1px solid var(--color-grey-500);
+}
+
 .sr-only {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
@@ -89,11 +182,123 @@ label {
 }
 
 .icon {
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 1.25rem;
+  width: 1.25rem;
 }
 
 .input-error {
   font: var(--text-body-sm);
   color: var(--color-red);
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/*
+  ==============================
+  * General Styles
+  ==============================
+*/
+
+h1.text-heading {
+  margin-bottom: var(--spacing-400);
+}
+
+fieldset[name="contact-info"] {
+  display: grid;
+  gap: var(--spacing-300);
+}
+
+fieldset[name="query-type"] {
+  display: grid;
+  gap: var(--spacing-200);
+}
+
+fieldset[name="query-type"] > legend {
+  margin-bottom: var(--spacing-200);
+}
+
+fieldset[name="message-field"] {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-200);
+}
+
+fieldset[name="consent-field"] {
+  display: grid;
+  grid-template-columns: 1rem 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "checkbox label"
+    "error error";
+  gap: var(--spacing-200);
+}
+
+fieldset[name="consent-field"] > input {
+  grid-area: checkbox;
+  place-self: center;
+}
+
+fieldset[name="consent-field"] > label {
+  grid-area: label;
+}
+
+#consent-error {
+  grid-area: error;
+}
+
+.attribution {
+  margin-top: var(--spacing-400);
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/*
+  ==============================
+  * State Styles
+  ==============================
+*/
+
+input[type="radio"]:checked {
+  outline: 2px solid var(--color-green-600);
+  border: 3px solid var(--color-green-200);
+  background-color: var(--color-green-600);
+}
+
+input[type="checkbox"]:checked {
+  accent-color: var(--color-green-600);
+}
+
+.text-input:hover,
+.text-input:focus,
+.text-input:active,
+.radio-input:hover,
+.radio-input:focus,
+.radio-input:active,
+textarea:hover,
+textarea:focus,
+textarea:active,
+input[type="checkbox"]:hover,
+input[type="checkbox"]:focus,
+input[type="checkbox"]:active {
+  outline: 1px solid var(--color-green-600);
+  border-color: var(--color-green-600);
+}
+
+.radio-input:focus-within {
+  background-color: var(--color-green-200);
+  outline: 1px solid var(--color-green-600);
+  border-color: var(--color-green-600);
+}
+
+button:hover,
+button:focus,
+button:active {
+  outline: none;
+  background-color: var(--color-green-900);
 }

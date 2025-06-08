@@ -1,6 +1,6 @@
 <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>
-<symbol id="asterisk" viewBox="0 0 7 17">
+<symbol id="asterisk" viewBox="0 0 8 17">
 <title>asterisk</title>
 <path d="M1.328 10.168L2.768 8.76L0.896 8.104L1.28 7.256L2.976 8.104L2.832 6.056H3.792L3.648 8.104L5.344 7.24L5.728 8.104L3.872 8.744L5.312 10.168L4.592 10.792L3.328 9.128L2.048 10.792L1.328 10.168Z" fill="#0C7D69"/>
 </symbol>
