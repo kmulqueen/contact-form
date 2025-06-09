@@ -88,6 +88,7 @@ select {
 input[type="checkbox"] {
   height: 1rem;
   width: 1rem;
+  cursor: pointer;
 }
 
 fieldset {
@@ -122,6 +123,7 @@ input[type="radio"] {
 }
 
 button {
+  cursor: pointer;
   background-color: var(--color-green-600);
   color: var(--color-white);
   font: var(--text-body-md-bold);
@@ -249,6 +251,7 @@ fieldset[name="consent-field"] > input {
 
 fieldset[name="consent-field"] > label {
   grid-area: label;
+  cursor: pointer;
 }
 
 #consent-error {
@@ -274,7 +277,7 @@ dialog > p {
   text-align: center;
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--color-green-900);
 }
 
 /*
@@ -345,4 +348,54 @@ dialog[open] {
   padding: var(--spacing-400);
   gap: var(--spacing-150);
   border-radius: 1rem;
+}
+
+/*
+  ==============================
+  * Media Queries
+  ==============================
+*/
+@media (min-width: 40rem) {
+  body {
+    padding: var(--spacing-1600) var(--spacing-400);
+  }
+
+  main {
+    padding: var(--spacing-500);
+    border-radius: 1rem;
+  }
+
+  fieldset[name="contact-info"] {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "first last"
+      "email email";
+    column-gap: var(--spacing-200);
+    row-gap: var(--spacing-300);
+  }
+
+  .contact-info__input-container--first {
+    grid-area: first;
+  }
+  .contact-info__input-container--last {
+    grid-area: last;
+  }
+  .contact-info__input-container--email {
+    grid-area: email;
+  }
+
+  fieldset[name="query-type"] {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 64rem) {
+  body {
+    display: grid;
+    place-content: center;
+  }
+
+  main {
+    max-width: 46rem;
+  }
 }
