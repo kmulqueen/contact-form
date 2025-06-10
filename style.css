@@ -197,6 +197,11 @@ button {
 .input-error {
   font: var(--text-body-sm);
   color: var(--color-red);
+  /* display: block; */
+}
+
+.input-error-hidden {
+  display: none;
 }
 
 .input-container {
@@ -345,6 +350,7 @@ dialog[open] {
     "icon heading"
     "message message";
   width: 100%;
+  max-width: 46rem;
   padding: var(--spacing-400);
   gap: var(--spacing-150);
   border-radius: 1rem;

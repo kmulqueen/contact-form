@@ -38,7 +38,11 @@
               autocomplete="given-name"
               class="text-input"
             />
-            <p class="input-error" id="first-name-error">
+            <p
+              class="input-error input-error-hidden"
+              aria-live="polite"
+              id="first-name-error"
+            >
               This field is required
             </p>
           </div>
@@ -59,7 +63,11 @@
               autocomplete="family-name"
               class="text-input"
             />
-            <p class="input-error" id="last-name-error">
+            <p
+              class="input-error input-error-hidden"
+              aria-live="polite"
+              id="last-name-error"
+            >
               This field is required
             </p>
           </div>
@@ -80,7 +88,11 @@
               autocomplete="email"
               class="text-input"
             />
-            <p class="input-error" id="email-error">
+            <p
+              class="input-error input-error-hidden"
+              aria-live="polite"
+              id="email-error"
+            >
               Please enter a valid email address
             </p>
           </div>
@@ -93,14 +105,29 @@
             <span class="sr-only"> required </span>
           </legend>
           <label for="general" class="radio-input"
-            ><input type="radio" name="query" id="general" />General
-            Enquiry</label
+            ><input
+              type="radio"
+              name="query"
+              id="general"
+              value="general-enquiry"
+              required
+            />General Enquiry</label
           >
           <label for="support" class="radio-input"
-            ><input type="radio" name="query" id="support" />Support
-            Request</label
+            ><input
+              type="radio"
+              name="query"
+              id="support"
+              value="support-request"
+            />Support Request</label
           >
-          <p class="input-error" id="query-error">Please select a query type</p>
+          <p
+            class="input-error input-error-hidden"
+            aria-live="polite"
+            id="query-error"
+          >
+            Please select a query type
+          </p>
         </fieldset>
         <fieldset name="message-field">
           <label for="message"
@@ -109,11 +136,23 @@
             </svg>
             <span class="sr-only"> required </span>
           </label>
-          <textarea name="message" id="message" rows="8" cols="8"></textarea>
-          <p class="input-error" id="message-error">This field is required</p>
+          <textarea
+            name="message"
+            id="message"
+            rows="8"
+            cols="8"
+            required
+          ></textarea>
+          <p
+            class="input-error input-error-hidden"
+            aria-live="polite"
+            id="message-error"
+          >
+            This field is required
+          </p>
         </fieldset>
         <fieldset name="consent-field">
-          <input type="checkbox" name="consent" id="consent" />
+          <input type="checkbox" name="consent" id="consent" required />
           <label for="consent"
             >I consent to being contacted by the team<svg
               class="icon-asterisk"
@@ -123,7 +162,11 @@
             </svg>
             <span class="sr-only"> required </span>
           </label>
-          <p class="input-error" id="consent-error">
+          <p
+            class="input-error input-error-hidden"
+            aria-live="polite"
+            id="consent-error"
+          >
             To submit this form, please consent to being contacted
           </p>
         </fieldset>
